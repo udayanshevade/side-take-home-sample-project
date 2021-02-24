@@ -43,9 +43,19 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
+    "husky": "4",
+    "lint-staged": ">=10",
     "prettier": "^2.2.1"
   },
   "prettier": {
     "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
