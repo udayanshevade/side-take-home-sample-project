@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
+    "cross-env": "^7.0.3",
     "husky": "4",
     "lint-staged": ">=10",
     "prettier": "^2.2.1"
@@ -52,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "cross-env CI=true yarn test && lint-staged"
     }
   },
   "lint-staged": {
