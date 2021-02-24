@@ -1,6 +1,5 @@
 /**
  * SimplyRETS api request/response data types
- * Currently adding this here simply, but can re-evaluate the folder structure later.
  * - Unclear whether any fields can have default `null` values from the sample data, would be good to verify.
  * - Add a more detailed interface as it becomes necessary, currently only typing the required data.
  */
