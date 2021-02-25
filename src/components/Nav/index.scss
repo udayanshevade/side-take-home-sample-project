@@ -1,0 +1,58 @@
+@import '../../styles/_colors.scss';
+
+$highlighted-border: #f05540;
+$default-border: #c8c8c8;
+
+
+.nav {
+  background: $secondary-background;
+  padding: 0.65rem 3.8rem 1.65rem 1.7rem;
+
+  @media screen and (min-width: 500px) {
+    padding: 2.55rem 6rem 3.55rem 6rem;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav__list-link {
+  font: 600 2.8rem/4rem "Open Sans", sans-serif;
+  color: $primary-text;
+  text-decoration: none;
+  margin-right: 2rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+
+  &:after {
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    opacity: 0.95;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: $default-border;
+  }
+
+  &:hover:after {
+    opacity: 1;
+    transform: translateY(0.1rem);
+  }
+
+  &.nav__list-link--selected:after {
+    background: $highlighted-border;
+  }
+
+  &:hover,
+  &:visited {
+    color: $primary-text;
+    text-decoration: none;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import routes, { NavItem } from './routes';
+import './index.scss';
 
 const Nav = ({ items = routes }: { items?: NavItem[] }) => (
   <nav className="nav">
