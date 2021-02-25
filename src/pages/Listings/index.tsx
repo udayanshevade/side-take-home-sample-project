@@ -4,6 +4,7 @@ import useLoadListingsData from './useLoadListingsData';
 
 const ListingsPage = () => {
   const [{ status, data }] = useLoadListingsData();
+
   // TODO: handle additional views for a better experience
   if (status === 'fetching') {
     return null;

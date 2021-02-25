@@ -3,6 +3,12 @@ import { NavLink } from 'react-router-dom';
 import routes, { NavItem } from './routes';
 import './index.scss';
 
+/**
+ * This is a top-level component, though it doesn't qualify as a scene.
+ * Stowing it in the 'components/' folder for now,
+ * but at a later point, it might be good to revisit the folder structure
+ * and separate 'components' from 'containers'
+ */
 const Nav = ({ items = routes }: { items?: NavItem[] }) => (
   <nav className="nav">
     <ul className="nav__list">

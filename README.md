@@ -49,13 +49,20 @@ Specify any caveats and workarounds which might help another developer get unstu
 
 ## Using:
 
-- react
-- react-router-dom
-- jest / react-testing-library
+- react: bootstrapped with CRA
+- react-router-dom: for easy navigation
+- jest / react-testing-library: jest for logic, RTL for more integration-like tests
+- node-sass: decided just to use scss modules for this one vs styled-components
 
 ## Known Issues / Caveats
 
 TBD
+
+## TODO:
+
+- Complete testing: a couple of components/hooks still don't have coverage
+- Register service worker and make app compliant with a PWA offline-first experience
+- Refine visual match with the design
 
 ## Additional Context
 

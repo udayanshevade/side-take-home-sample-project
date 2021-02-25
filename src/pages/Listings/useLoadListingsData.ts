@@ -13,6 +13,11 @@ interface Reducer {
 
 const initialState = { status: 'fetching', data: null };
 
+/**
+ * Using a reducer to deal with multiple side-effects,
+ * updating both status and data at once
+ * to avoid any potential race conditions with setting multiple states in parallel.
+ */
 const reducer = (
   state: Reducer = initialState,
   action: { type: string; payload?: any } // specifying 'any' payload, but would want to type more explicitly
@@ -33,6 +38,13 @@ const reducer = (
   }
 };
 
+/**
+ * Custom hook to load listings data:
+ * - first from the cache if it exists
+ * - next from the api
+ * - Ideally, we would want to have the freshest data available on every load of the app.
+ * - We would request the data from the API in the background as the cached data is seen up front for a better user experience.
+ */
 const useLoadListingsData = () => {
   const [data, dispatch] = useReducer(reducer, initialState);
 
