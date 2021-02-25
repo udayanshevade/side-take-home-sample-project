@@ -1,25 +1,19 @@
 import React from 'react';
-import Listing from '../../components/Listing';
+import Listings from '../../components/Listings';
 import useLoadListingsData from './useLoadListingsData';
-import './index.scss';
 
-const Listings = () => {
+const ListingsPage = () => {
   const [{ status, data }] = useLoadListingsData();
+  // TODO: handle additional views for a better experience
   if (status === 'fetching') {
-    return <span>Fetching</span>;
+    return null;
   } else if (status === 'error') {
-    return <span>There was an error</span>;
+    return null;
   } else if (status === 'fetched' && !Array.isArray(data)) {
-    return <span>There was an unexpected error.</span>;
+    return null;
   }
 
-  return (
-    <section className="listings-container">
-      {data!.map((listingData) => (
-        <Listing key={listingData.mlsId} {...listingData} />
-      ))}
-    </section>
-  );
+  return <Listings data={data!} />;
 };
 
-export default Listings;
+export default ListingsPage;
