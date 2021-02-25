@@ -1,0 +1,10 @@
+.listings-container {
+  width: 100%;
+  padding: 3.8rem 5.9rem 5.9rem;
+
+  @media screen and (min-width: 50rem) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5.8rem;
+  }
+}

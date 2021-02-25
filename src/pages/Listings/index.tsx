@@ -1,6 +1,7 @@
 import React from 'react';
 import Listing from '../../components/Listing';
 import useLoadListingsData from './useLoadListingsData';
+import './index.scss';
 
 const Listings = () => {
   const [{ status, data }] = useLoadListingsData();
@@ -13,7 +14,7 @@ const Listings = () => {
   }
 
   return (
-    <section>
+    <section className="listings-container">
       {data!.map((listingData) => (
         <Listing key={listingData.mlsId} {...listingData} />
       ))}
