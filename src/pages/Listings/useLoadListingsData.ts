@@ -57,13 +57,13 @@ const useLoadListingsData = () => {
         dispatch({ type: SET_ERROR });
       } else {
         dispatch({ type: SET_DATA, payload: data });
+        window.localStorage.setItem('listingsData', JSON.stringify(data));
       }
     };
 
     const cacheData = window.localStorage.getItem('listingsData');
-
     if (cacheData) {
-      const data = JSON.parse(cacheData);
+      const data = JSON.parse(cacheData || '');
       dispatch({ type: SET_DATA, payload: data });
     } else {
       getNewData();
