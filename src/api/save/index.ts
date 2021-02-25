@@ -1,5 +1,3 @@
-const tag = 'save-listings-api';
-
 /**
  * Local placeholder for what might eventually be a REST API call
  */
@@ -12,7 +10,6 @@ export const getSavedListings = (): { [id: string]: true } | null => {
       return {};
     }
   } catch (err) {
-    console.error(tag, `Error: localStorage.getItem('saves'): ${err.message}`);
     return null;
   }
 };
@@ -27,7 +24,6 @@ export const storeSavedListings = (ids: { [id: string]: boolean }): boolean => {
     window.localStorage.setItem('saves', JSON.stringify(ids));
     return true;
   } catch (err) {
-    console.error(tag, `Error: localStorage.setItem('saves'): ${err.message}`);
     return false;
   }
 };
