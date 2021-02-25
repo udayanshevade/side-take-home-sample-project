@@ -18,7 +18,6 @@ test('should render without error', () => {
       <Nav items={routes} />
     </Router>
   );
-  expect(true).toBe(true);
   expect(screen.getByRole('navigation')).toBeInTheDocument();
   expect(screen.getByRole('list')).toBeInTheDocument();
   expect(screen.getAllByRole('listitem').length).toBe(2);
