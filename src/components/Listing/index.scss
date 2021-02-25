@@ -8,6 +8,18 @@
   justify-content: space-between;
 }
 
+.listing__header {
+  position: relative;
+
+  .icon-like {
+    position: absolute;
+    width: 3.917rem;
+    width: 3.594rem;
+    top: 1.788rem;
+    right: 2.392rem;
+  }
+}
+
 .listing__img {
   display: block;
   max-width: 100%;

@@ -1,5 +1,6 @@
 import React from 'react';
 import dateFormat from 'date-fns/format';
+import Save from '../Save';
 import * as types from '../../api/SimplyRets/types';
 import './index.scss';
 
@@ -8,6 +9,7 @@ const outputFormat = 'M/d/yy';
 const formatAmount = (val: number): string => `$${val.toLocaleString()}`;
 
 const Listing = ({
+  mlsId,
   address,
   listDate,
   listPrice,
@@ -15,7 +17,8 @@ const Listing = ({
   property: { area, bedrooms, bathsFull, bathsHalf },
 }: types.ApiResListing) => (
   <section className="listing-container" role="article">
-    <header className="listing__picture-container">
+    <header className="listing__header">
+      <Save mlsId={mlsId} />
       <picture className="listing__picture">
         {photos.length && (
           <img
