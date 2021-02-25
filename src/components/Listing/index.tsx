@@ -5,6 +5,8 @@ import './index.scss';
 
 const outputFormat = 'M/d/yy';
 
+const formatAmount = (val: number): string => `$${val.toLocaleString()}`;
+
 const Listing = ({
   address,
   listDate,
@@ -13,7 +15,7 @@ const Listing = ({
   property: { area, bedrooms, bathsFull, bathsHalf },
 }: types.ApiResListing) => (
   <section className="listing-container" role="article">
-    <div className="listing__picture-container">
+    <header className="listing__picture-container">
       <picture className="listing__picture">
         {photos.length && (
           <img
@@ -23,8 +25,8 @@ const Listing = ({
           />
         )}
       </picture>
-    </div>
-    <div className="listing__info">
+    </header>
+    <footer className="listing__info">
       <div className="listing__info__details">
         <span className="listing__info__detail">{bedrooms} BR</span>
         <span className="listing__info__detail-separator">|</span>
@@ -34,12 +36,12 @@ const Listing = ({
         <span className="listing__info__detail-separator">|</span>
         <span className="listing__info__detail">{area} Sq Ft</span>
       </div>
-      <div className="listing__price">{listPrice}</div>
+      <div className="listing__price">{formatAmount(listPrice)}</div>
       <address className="listing__address">{address.full}</address>
       <div className="listing__date">
         Listed: {dateFormat(new Date(listDate), outputFormat)}
       </div>
-    </div>
+    </footer>
   </section>
 );
 
