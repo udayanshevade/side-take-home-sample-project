@@ -1,0 +1,43 @@
+@import '../../styles/_colors.scss';
+
+.listing-container {
+  margin-bottom: 3.5rem;
+}
+
+.listing__img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.listing__info {
+  color: $primary-text;
+}
+
+.listing__info__details {
+  display: flex;
+  align-items: center;
+}
+
+.listing__info__detail {
+  font: 600 2rem/3.2rem "Open Sans", sans-serif;
+}
+
+.listing__info__detail-separator {
+  font: 600 2rem/3.2rem "Open Sans", sans-serif;
+}
+
+.listing__price {
+  margin: 1rem 0 0.5rem;
+  font: 700 2.6rem/2.4rem "Open Sans", sans-serif;
+}
+
+.listing__address {
+  font-size: 1.5rem;
+  line-height: 3.2rem;
+  font-style: normal;
+}
+
+.listing__date {
+  color: $secondary-text;
+}

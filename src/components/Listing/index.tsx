@@ -1,6 +1,7 @@
 import React from 'react';
 import dateFormat from 'date-fns/format';
 import * as types from '../../api/SimplyRets/types';
+import './index.scss';
 
 const outputFormat = 'M/d/yy';
 
@@ -12,29 +13,31 @@ const Listing = ({
   property: { area, bedrooms, bathsFull, bathsHalf },
 }: types.ApiResListing) => (
   <section className="listing-container" role="article">
-    <div className="listing-picture-container">
-      <picture className="listing-picture">
+    <div className="listing__picture-container">
+      <picture className="listing__picture">
         {photos.length && (
           <img
             alt={`Photograph of ${address.full}`}
-            className="listing-img"
+            className="listing__img"
             src={photos[0]}
           />
         )}
       </picture>
     </div>
-    <div className="listing-info">
-      <div className="listing-info__details">
-        <span className="listing-info__detail">{bedrooms} BR</span>
-        <span className="listing-info__detail">
+    <div className="listing__info">
+      <div className="listing__info__details">
+        <span className="listing__info__detail">{bedrooms} BR</span>
+        <span className="listing__info__detail-separator">|</span>
+        <span className="listing__info__detail">
           {bathsFull + 0.5 * bathsHalf} Bath
         </span>
-        <span className="listing-info__detail">{area} Sq Ft</span>
+        <span className="listing__info__detail-separator">|</span>
+        <span className="listing__info__detail">{area} Sq Ft</span>
       </div>
-      <div className="listing-price">{listPrice}</div>
-      <address className="listing-address">{address.full}</address>
-      <div className="listing-date">
-        {dateFormat(new Date(listDate), outputFormat)}
+      <div className="listing__price">{listPrice}</div>
+      <address className="listing__address">{address.full}</address>
+      <div className="listing__date">
+        Listed: {dateFormat(new Date(listDate), outputFormat)}
       </div>
     </div>
   </section>
