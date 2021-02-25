@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+import Nav from './components/Nav';
 import Listings from './pages/Listings';
 import Saved from './pages/Saved';
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="app">
       <Router>
+        <Nav />
         <Switch>
           <Route path="/listings">
             <Listings />
