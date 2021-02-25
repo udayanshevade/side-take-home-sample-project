@@ -2,12 +2,21 @@
 
 .listing-container {
   margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing__picture-container {
+  flex-grow: 1;
 }
 
 .listing__img {
   display: block;
   max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
   margin: 0 auto;
+  border-radius: 0.4rem;
 }
 
 .listing__info {
