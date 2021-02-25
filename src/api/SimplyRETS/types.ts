@@ -11,22 +11,13 @@ export interface ApiResProperty {
 }
 
 export interface ApiResAddress {
-  city: string | null;
-  country: string | null;
-  crossStreet: string | null;
   full: string | null;
-  postalCode: string | null;
-  state: string | null;
-  streetName: string | null;
-  streetNumberText: string | null;
-  streetNumber: number | null;
-  unit: string | null;
 }
 
 export interface ApiResListing {
   address: ApiResAddress;
-  listDate: string | null;
-  listPrice: number | null;
+  listDate: string;
+  listPrice: number;
   mlsId: number;
   photos: string[];
   property: ApiResProperty;
