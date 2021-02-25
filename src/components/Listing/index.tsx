@@ -1,37 +1,24 @@
 import React from 'react';
 import dateFormat from 'date-fns/format';
-
-interface ListingProps {
-  address: { full: string };
-  area: number;
-  bedrooms: number;
-  fullBaths: number;
-  halfBaths: number;
-  listDate: string;
-  listPrice: number;
-  photo: string;
-}
+import * as types from '../../api/SimplyRets/types';
 
 const outputFormat = 'M/d/yy';
 
 const Listing = ({
   address,
-  area,
-  bedrooms,
-  fullBaths,
-  halfBaths,
   listDate,
   listPrice,
-  photo,
-}: ListingProps) => (
+  photos,
+  property: { area, bedrooms, bathsFull, bathsHalf },
+}: types.ApiResListing) => (
   <section className="listing-container" role="article">
     <div className="listing-picture-container">
       <picture className="listing-picture">
-        {photo && (
+        {photos.length && (
           <img
             alt={`Photograph of ${address.full}`}
             className="listing-img"
-            src={photo}
+            src={photos[0]}
           />
         )}
       </picture>
@@ -40,7 +27,7 @@ const Listing = ({
       <div className="listing-info__details">
         <span className="listing-info__detail">{bedrooms} BR</span>
         <span className="listing-info__detail">
-          {fullBaths + 0.5 * halfBaths} Bath
+          {bathsFull + 0.5 * bathsHalf} Bath
         </span>
         <span className="listing-info__detail">{area} Sq Ft</span>
       </div>

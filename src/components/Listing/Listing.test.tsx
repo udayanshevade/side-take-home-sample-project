@@ -7,13 +7,16 @@ const mockDate = '2021-02-25T02:07:14.559Z';
 test('Listing should render without issue', () => {
   const mockListingData = {
     address: { full: 'Foo, BAR, BAZ' },
-    area: 9001,
-    bedrooms: 5,
-    fullBaths: 2,
-    halfBaths: 3,
     listDate: mockDate,
     listPrice: 1,
-    photo: 'foo',
+    mlsId: 1,
+    photos: ['foo'],
+    property: {
+      area: 9001,
+      bathsFull: 2,
+      bathsHalf: 3,
+      bedrooms: 5,
+    },
   };
 
   render(<Listing {...mockListingData} />);
