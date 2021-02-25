@@ -1,7 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-const tag = 'Api';
-
 /**
  * Simple abstraction to handle errors
  * For now, just starting with a simple `get` that has some base-level error handling
@@ -15,9 +13,9 @@ const ApiBase = {
     config?: AxiosRequestConfig
   ): Promise<T | null> {
     try {
-      return await axiosInstance.get(endpoint, config);
+      const { data } = await axiosInstance.get(endpoint, config);
+      return data;
     } catch (err) {
-      console.error(tag, `Error: [GET] ${endpoint}: ${err.message}`);
       return null;
     }
   },

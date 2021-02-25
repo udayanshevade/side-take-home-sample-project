@@ -8,7 +8,7 @@ describe('Api', () => {
   describe('[GET]', () => {
     it('should return expected value', async () => {
       const mockData = [];
-      mock.onGet('/').replyOnce(200, mockData);
+      mock.onGet('/').replyOnce(200, { data: mockData });
       const { data } = await ApiBase.get('/');
       expect(data).toEqual(mockData);
     });
