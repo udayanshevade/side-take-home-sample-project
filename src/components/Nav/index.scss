@@ -8,6 +8,9 @@ $default-border: #c8c8c8;
 .nav {
   background: $secondary-background;
   padding: 0.65rem 3.8rem 1.65rem 1.7rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   @media screen and (min-width: $breakpoint-med) {
     padding: 2.55rem 6rem 3.55rem 6rem;
@@ -26,7 +29,7 @@ $default-border: #c8c8c8;
   font: 400 1.4rem/4rem "Open Sans", sans-serif;
   color: $primary-text;
   text-decoration: none;
-  margin-right: 2rem;
+  margin-right: 5rem;
   padding-bottom: 0.5rem;
   position: relative;
 
@@ -59,5 +62,6 @@ $default-border: #c8c8c8;
 
   @media screen and (min-width: $breakpoint-med) {
     font: 600 2.8rem/4rem "Open Sans", sans-serif;
+    margin-right: 3rem;
   }
 }
