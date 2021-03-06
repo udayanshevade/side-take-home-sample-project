@@ -1,6 +1,7 @@
 {
   "name": "side-take-home-sample-project",
   "homepage": "https://udayanshevade.github.io/side-take-home-sample-project",
+  "start_url": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
