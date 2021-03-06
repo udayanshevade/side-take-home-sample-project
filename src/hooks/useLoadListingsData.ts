@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from 'react';
-import * as listingsApi from '../../api/SimplyRets/listings';
-import * as apiTypes from '../../api/SimplyRets/types';
+import * as listingsApi from '../api/SimplyRets/listings';
+import * as apiTypes from '../api/SimplyRets/types';
 
 const SET_STATUS = 'SET_STATUS';
 const SET_DATA = 'SET_DATA';

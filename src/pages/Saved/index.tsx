@@ -1,12 +1,13 @@
 import React from 'react';
 import Listings from '../../components/Listings';
-import useSavedListings from '../../components/Save/useSavedListings';
-import useLoadListingsData from '../Listings/useLoadListingsData';
+import * as apiTypes from '../../api/SimplyRets/types';
 
-const SavedListingsPage = () => {
-  const [saved] = useSavedListings();
-  const [{ status, data }] = useLoadListingsData();
-
+const SavedListingsPage = ({ saved, persistListings, status, data }: {
+  saved: { [id: string]: boolean };
+  persistListings: (id: number, toSave: boolean) => void;
+  status: string;
+  data: apiTypes.ApiResListing[] | null
+}) => {
   // TODO: refactor/cleanup here for reuse
   if (status === 'fetching') {
     return <span>Fetching</span>;
@@ -16,7 +17,13 @@ const SavedListingsPage = () => {
     return <span>There was an unexpected error.</span>;
   }
 
-  return <Listings data={data!.filter(({ mlsId }) => Boolean(saved[String(mlsId)]))} />;
+  return (
+    <Listings
+      data={data!.filter(({ mlsId }) => Boolean(saved[String(mlsId)]))}
+      saved={saved}
+      persistListings={persistListings}
+    />
+  );
 };
 
 export default SavedListingsPage;

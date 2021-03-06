@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 import useLoadListingsData from './useLoadListingsData';
-import testData from '../../api/SimplyRets/__tests__/test.json';
+import testData from '../api/SimplyRets/__tests__/test.json';
 
-jest.mock('../../api/SimplyRets/listings');
+jest.mock('../api/SimplyRets/listings');
 
 const mockFn = jest.fn();
 

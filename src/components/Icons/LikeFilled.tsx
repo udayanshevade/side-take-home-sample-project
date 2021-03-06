@@ -2,6 +2,7 @@ import React from 'react';
 
 const LikeFilled = ({ onClick }: { onClick?: React.MouseEventHandler<SVGSVGElement> }) => (
   <svg
+    data-testid="save-icon--filled"
     className="icon-like icon-like--empty"
     width="41"
     height="37"
